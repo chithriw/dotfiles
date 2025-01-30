@@ -10,52 +10,45 @@ general {
         colors = true
         interval = 5
 }
-# order += "ipv6"
-order += "wireless wlan0"
-order += "ethernet _first_"
+order += "wireless wlp4s0"
+order += "ethernet enp6s0f4u2"
 order += "battery all"
-# order += "cpu_termperature"
 order += "disk /"
-# order += "load"
 order += "cpu_usage"
 order += "memory"
 order += "tztime local"
 
-wireless wlan0 {
-        format_up = "W: (%quality at %essid, %bitrate) %ip"
+wireless wlp4s0 {
+        format_up = "W: (%quality at %essid, %bitrate) %ip | "
         format_down = "W: down"
 }
 
-ethernet _first_ {
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+ethernet enp6s0f4u2{
+        format_up = "E: %ip (%speed) | "
+        format_down = "E: down | "
 }
 
 battery all {
-        format = "%status %percentage %remaining"
+        format = "%status %percentage %remaining | "
         last_full_capacity = true
 	integer_battery_capacity = true
 }
 
 disk "/" {
-        format = "disk: %percentage_used"
-}
-
-load {
-        format = "%1min"
+        format = "disk: %percentage_used | "
 }
 
 memory {
-        # format = "%used | %total"
-	format = "ram: %percentage_used"
+    format = "ram: %used->%total | "
+	#format = "ram: %percentage_used | "
 }
 
 tztime local {
-        format = "%A %m-%d-%Y %H:%M:%S"
-	timezone = "Asia/Shanghai"
+    format = "%A %m-%d-%Y %H:%M:%S |"
+    timezone = "Asia/Shanghai"
 }
 
 cpu_usage {
-	format = "cpu: %usage"
+	format = "cpu: %usage |"
 }
 

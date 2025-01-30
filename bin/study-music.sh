@@ -1,20 +1,26 @@
 #!/usr/bin/env bash
 
-wa_dir="$HOME/Music/WA"
-col_dir="$HOME/Music/Collection"
-bright_dir="$HOME/Music/Bright"
-ghibili_dir="$HOME/Music/Ghibili"
+scenery_dir="$HOME/Music/Scenery"
+acg_dir="$HOME/Music/Acg"
+ghibli_dir="$HOME/Music/Ghibli"
+english_dir="$HOME/Music/English"
 
 function main() {
     if [[ $# -eq 0 ]]; then
-        audacious --enqueue ${bright_dir}; exit
+        audacious --enqueue ${ghibli_dir}; exit
     fi
     case "${1,,}" in
-        "col")
-            audacious --enqueue ${col_dir}
+        "acg")
+            audacious --enqueue ${acg_dir}
             ;;
         "gbl")
-            audacious --enqueue ${ghibili_dir}
+            audacious --enqueue ${ghibli_dir}
+            ;;
+        "en")
+            audacious --enqueue ${english_dir}
+            ;;
+        "sc")
+            audacious --enqueue ${scenery_dir}
             ;;
         *)
             echo "Invalid input argument"

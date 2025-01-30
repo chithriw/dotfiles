@@ -7,12 +7,12 @@ fav_dir="/home/chithriw/Picture/Fav-Wallpaper"
 sex_dir="/home/chithriw/Picture/Sex"
 scenery_dir="/home/chithriw/Picture/Scenery"
 
-arch_img=$(find "${arch_dir}" -type f -name "*.jpg" -o -name "*.png" | shuf --head-count=1)
-miku_img=$(find "${miku_dir}" -type f -name "*.jpg" -o -name "*.png" | shuf --head-count=1)
-fav_img=$(find "${fav_dir}" -type f -name "*.jpg" -o -name "*.png" | shuf --head-count=1)
-acg_img=$(find "${acg_dir}" -type f -name "*.jpg" -o -name "*.png" | shuf --head-count=1)
+arch_img=$(find "${arch_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
+miku_img=$(find "${miku_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
+fav_img=$(find "${fav_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
+acg_img=$(find "${acg_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
 sex_img=$(find "${sex_dir}" -type f -name "*.jpg" -o -name "*.png" | shuf --head-count=1)
-scenery_img=$(find "${scenery_dir}" -type f -name "*.jpg" -o -name "*.png" | shuf --head-count=1)
+scenery_img=$(find "${scenery_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
 
 function main() {
     if [[ $# -eq 0 ]]; then
