@@ -7,6 +7,23 @@ fav_dir="/home/chithriw/Picture/Fav-Wallpaper"
 sex_dir="/home/chithriw/Picture/Sex"
 scenery_dir="/home/chithriw/Picture/Scenery"
 
+dir_arr=(
+    "$arch_dir"
+    "$miku_dir"
+    "$acg_dir"
+    "$fav_dir"
+    "$sex_dir"
+    "$scenery_dir"
+)
+
+# ensure image direcotry is existing
+for dir in "${dir_arr[@]}"; do
+    if [[ ! -d "${dir}" ]]; then
+        mkdir -p "${dir}"
+        echo $dir
+    fi
+done
+
 arch_img=$(find "${arch_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
 miku_img=$(find "${miku_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
 fav_img=$(find "${fav_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
