@@ -44,7 +44,7 @@ memory {
 }
 
 tztime local {
-    format = "%A %m-%d-%Y %H:%M:%S |"
+    format = "%I:%M:%S %p. %a | %m-%d-%Y |"
     timezone = "Asia/Shanghai"
 }
 

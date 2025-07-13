@@ -52,5 +52,11 @@ set expandtab
 set hidden
 set smartindent
 set incsearch
+set smartindent
+set autoindent
 
 syntax on
+
+runtime ftplugin/man.vim
+
+filetype indent on

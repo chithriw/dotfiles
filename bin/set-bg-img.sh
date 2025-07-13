@@ -1,19 +1,17 @@
 #!/bin/bash
 
-arch_dir="$HOME/Picture/Arch"
-miku_dir="$HOME/Picture/Miku"
-acg_dir="$HOME/Picture/Acg"
-fav_dir="/home/chithriw/Picture/Fav-Wallpaper"
-sex_dir="/home/chithriw/Picture/Sex"
-scenery_dir="/home/chithriw/Picture/Scenery"
+acg_dir="$HOME/Pictures/Acg"
+anm_dir="$HOME/Pictures/Anime"
+fav_dir="/home/chithriw/Pictures/Fav-Wallpaper"
+sex_dir="/home/chithriw/Pictures/Sex"
+snry_dir="/home/chithriw/Pictures/Scenery"
 
 dir_arr=(
-    "$arch_dir"
-    "$miku_dir"
     "$acg_dir"
-    "$fav_dir"
     "$sex_dir"
-    "$scenery_dir"
+    "$fav_dir"
+    "$anm_dir"
+    "$snry_dir"
 )
 
 # ensure image direcotry is existing
@@ -24,33 +22,32 @@ for dir in "${dir_arr[@]}"; do
     fi
 done
 
-arch_img=$(find "${arch_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
-miku_img=$(find "${miku_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
 fav_img=$(find "${fav_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
 acg_img=$(find "${acg_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
-sex_img=$(find "${sex_dir}" -type f -name "*.jpg" -o -name "*.png" | shuf --head-count=1)
-scenery_img=$(find "${scenery_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
+anm_img=$(find "${anm_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
+snry_img=$(find "${snry_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
+sex_img=$(find "${sex_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
 
 function main() {
     if [[ $# -eq 0 ]]; then
-        feh --bg-max "${arch_img}"; exit
+        feh --bg-max "${snry_img}"; exit
     fi
     start_picom
     case "${1,,}" in
         "acg")
             feh --bg-max "${acg_img}"
             ;;
-        "miku")
-            feh --bg-max "${miku_img}"
+        "anm")
+            feh --bg-max "${anm_img}"
             ;;
         "fav")
             feh --bg-max "${fav_img}"
             ;;
+        "snry")
+            feh --bg-max "${snry_img}"
+            ;;
         "sex")
             feh --bg-max "${sex_img}"
-            ;;
-        "sc")
-            feh --bg-max "${scenery_img}"
             ;;
         *)
             echo "Invalid input argument"
