@@ -54,9 +54,26 @@ set smartindent
 set incsearch
 set smartindent
 set autoindent
+set ignorecase
+set smartcase
 
-syntax on
+syntax enable
+
+" Shortcut
+nmap <C-p> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
 
 runtime ftplugin/man.vim
 
-filetype indent on
+filetype plugin indent on
+
+autocmd BufEnter * set updatetime=4000
+autocmd BufEnter *.md set updatetime=100
+
+
+call plug#begin()
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+call plug#end()
+

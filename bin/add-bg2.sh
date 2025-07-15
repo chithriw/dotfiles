@@ -5,11 +5,16 @@ bg_img_info="$HOME/.fehbg"
 # realpath
 running_bg_img_path=$(grep -i 'picture' "${bg_img_info}" | awk -F "'" '{print $2}')
 bg_img=$(basename "${running_bg_img_path}")
+fav_dir="$HOME/Pictures/Fav-Wallpaper"
+acg_dir="$HOME/Pictures/Acg"
+anm_dir="$HOME/Pictures/Anime"
+snry_dir="$HOME/Pictures/Scenery"
 
 main() {
     # non input argument, add fav_dir
-    if [[ $# -eq 0 ]] && ! existImg "${fav_dir}" "${bg_img}" -eq 0 ; then
+    if [[ $# -eq 0 ]] && existImg "${fav_dir}" "${bg_img}"; then
         cp -f "${running_bg_img_path}" "${fav_dir}"
+        echo "Add ${running_bg_img_path} to ${fav_dir}" 
         exit
     fi
 
@@ -17,21 +22,25 @@ main() {
         "fav")
 			if ! existImg "${fav_dir}" "${bg_img}"; then
 				cp -f "${running_bg_img_path}" "${fav_dir}"
+                echo "Add ${running_bg_img_path} to ${fav_dir}" 
 			fi
             ;;
         "acg")
-			if ! existImg "${fav_dir}" "${bg_img}"; then
-				cp -f "${running_bg_img_path}" "${fav_dir}"
+			if ! existImg "${acg_dir}" "${bg_img}"; then
+				cp -f "${running_bg_img_path}" "${acg_dir}"
+                echo "Add ${running_bg_img_path} to ${acg_dir}" 
 			fi
             ;;
         "anm")
-			if ! existImg "${fav_dir}" "${bg_img}"; then
-				cp -f "${running_bg_img_path}" "${fav_dir}"
+			if ! existImg "${anm_dir}" "${bg_img}"; then
+				cp -f "${running_bg_img_path}" "${anm_dir}"
+                echo "Add ${running_bg_img_path} to ${anm_dir}" 
 			fi
             ;;
         "snry")
-			if ! existImg "${fav_dir}" "${bg_img}"; then
-				cp -f "${running_bg_img_path}" "${fav_dir}"
+			if ! existImg "${snry_dir}" "${bg_img}"; then
+				cp -f "${running_bg_img_path}" "${snry_dir}"
+                echo "Add ${running_bg_img_path} to ${snry_dir}" 
 			fi
             ;;
         *)
@@ -44,10 +53,9 @@ existImg() {
     local fav_dir=$1
     local file_name=$2
     if [[ -e ${fav_dir}/${file_name} ]]; then
-        echo "Current image ${running_bg_img_path} is existing ${fav_dir}!"
-        return 0
-    else
         return 1
+    else
+        return 0
     fi
 }
 

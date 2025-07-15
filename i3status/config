@@ -8,8 +8,10 @@
 
 general {
         colors = true
-        interval = 5
+        interval = 1
 }
+order += "cpu_temperature 0"
+order += "volume master"
 order += "wireless wlp4s0"
 order += "ethernet enp6s0f4u2"
 order += "battery all"
@@ -17,38 +19,59 @@ order += "disk /"
 order += "cpu_usage"
 order += "memory"
 order += "tztime local"
+cpu_temperature 0 {
+    path = "/sys/class/hwmon/hwmon4/temp1_input"
+    format = "🌡️ %degrees°C |"
+    max_threshold = 90
+    format_above_threshold = "🔥 %degrees°C |"
+}
+volume master {
+        format = "♪: %volume |"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
 
 wireless wlp4s0 {
-        format_up = "W: (%quality at %essid, %bitrate) %ip | "
-        format_down = "W: down"
+        #format_up = "W: (%quality at %essid, %bitrate) %ip | "
+        format_up = "📶 %essid |"
+        format_down = "📶❌ down"
 }
 
 ethernet enp6s0f4u2{
-        format_up = "E: %ip (%speed) | "
-        format_down = "E: down | "
+        #format_up = "E: %ip (%speed) | "
+        #format_down = "E: down | "
+        format_up = "🌐🔌 %ip |"
+        format_down = "🌐🔌❌ down |"
 }
 
 battery all {
-        format = "%status %percentage %remaining | "
-        last_full_capacity = true
+    #format = "%status %percentage %remaining | "
+    format = "🔋 %percentage |"
+    last_full_capacity = true
 	integer_battery_capacity = true
 }
 
 disk "/" {
-        format = "disk: %percentage_used | "
-}
-
-memory {
-    format = "ram: %used->%total | "
-	#format = "ram: %percentage_used | "
-}
-
-tztime local {
-    format = "%I:%M:%S %p. %a | %m-%d-%Y |"
-    timezone = "Asia/Shanghai"
+        #format = "disk: %percentage_used | "
+        format = "📁 %percentage_used | "
 }
 
 cpu_usage {
-	format = "cpu: %usage |"
+	#format = "cpu: %usage |"
+	format = "  %usage |"
 }
+
+memory {
+    #format = "ram: %used->%total |"
+	format = "🖥️  %used |"
+}
+
+tztime local {
+    #format = "%I:%M:%S %p. %a | %m-%d-%Y |"
+    format = "📅 %I:%M:%S %p. | "
+    timezone = "Asia/Shanghai"
+}
+
 

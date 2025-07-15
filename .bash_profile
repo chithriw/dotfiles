@@ -15,5 +15,8 @@ export XMODIFIERS=@im=fcitx
 export SDL_IM_MODULE=fcitx
 export GLFW_IM_MODULE=ibus
 
+export HISTFILESIZE=5000
+
 export PATH=$PATH:$HOME/bin
+
 rfkill unblock all
