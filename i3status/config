@@ -70,7 +70,7 @@ memory {
 
 tztime local {
     #format = "%I:%M:%S %p. %a | %m-%d-%Y |"
-    format = "📅 %I:%M:%S %p. | "
+    format = "📅 %I:%M:%S %p. %a-%m-%d-%Y |"
     timezone = "Asia/Shanghai"
 }
 

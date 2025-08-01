@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 acg_dir="$HOME/Pictures/Acg"
 anm_dir="$HOME/Pictures/Anime"
-fav_dir="/home/chithriw/Pictures/Fav-Wallpaper"
-sex_dir="/home/chithriw/Pictures/Sex"
-snry_dir="/home/chithriw/Pictures/Scenery"
+fav_dir="$HOME/Pictures/Fav-Wallpaper"
+sex_dir="$HOME/Pictures/Sex"
+snry_dir="$HOME/Pictures/Scenery"
 
 dir_arr=(
     "$acg_dir"

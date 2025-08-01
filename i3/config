@@ -213,9 +213,11 @@ for_window [class=".*"] border pixel 1
 # Default floating window
 for_window [class="Clash-verge"] floating enable, resize set 1300 700, move position center
 for_window [class="Blueberry.py"] floating enable, resize set 800 600, move position center
+for_window [class="pavucontrol"] floating enable, resize set 800 600, move position center
 
 # Default scratchpad window
 for_window [class="eudic"], move scratchpad, scratchpad show 
+for_window [class="Workrave"], move scratchpad, scratchpad show , move position 1800 px 950 px
 
 # Default workspace
 for_window [class="TelegramDesktop"] move to workspace $ws6, workspace $ws6
@@ -226,9 +228,8 @@ gaps inner 1
 ### Custom config ###
 
 # Autostart application
-exec --no-startup-id fcitx5 -d
+exec --no-startup-id fcitx
 exec --no-startup-id nm-applet
-exec --no-startup-id volctl
 exec --no-startup-id blueberry-tray
 exec --no-startup-id thunar --daemon
 
@@ -238,7 +239,7 @@ exec_always exec ~/dotfiles/bin/set-bg-img.sh snry
 
 ### Custom Hotkey ###
 bindsym $mod+e exec thunar
-bindsym $mod+Shift+a exec pavucontrol-qt
+bindsym $mod+Shift+a exec pavucontrol
 bindsym $mod+Control+u exec light -A 5
 bindsym $mod+Control+d exec light -U 5
 # puluseaudio only
@@ -252,3 +253,4 @@ bindcode $mod+34 workspace back_and_forth
 bindsym $mod+Shift+space move scratchpad
 # Show the first scratchpad window
 bindsym $mod+space scratchpad show
+bindsym $mod+Shift+f exec "flameshot gui"
