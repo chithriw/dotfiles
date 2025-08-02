@@ -52,7 +52,7 @@ bindsym $mod+Return exec st
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run_history
 # A more modern dmenu replacement is rofi:
 #bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -232,16 +232,16 @@ exec --no-startup-id fcitx
 exec --no-startup-id nm-applet
 exec --no-startup-id blueberry-tray
 exec --no-startup-id thunar --daemon
+exec --no-startup-id "~/dotfiles/bin/set-bg-img.sh snry"
 
 # Always run config
 exec_always setxkbmap -option ctrl:nocaps
-exec_always exec ~/dotfiles/bin/set-bg-img.sh snry
 
 ### Custom Hotkey ###
 bindsym $mod+e exec thunar
 bindsym $mod+Shift+a exec pavucontrol
-bindsym $mod+Control+u exec light -A 5
-bindsym $mod+Control+d exec light -U 5
+bindsym $mod+Control+u exec light -A 10
+bindsym $mod+Control+d exec light -U 10
 # puluseaudio only
 bindsym $mod+Control+n exec pactl set-sink-volume $(pactl get-default-sink) +10.0%
 bindsym $mod+Control+p exec pactl set-sink-volume $(pactl get-default-sink) -10.0%
