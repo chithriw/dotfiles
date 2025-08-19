@@ -12,7 +12,7 @@ snry_dir="$HOME/Pictures/Scenery"
 
 main() {
     # non input argument, add fav_dir
-    if [[ $# -eq 0 ]] && existImg "${fav_dir}" "${bg_img}"; then
+    if [[ $# -eq 0 ]] && ! existImg "${fav_dir}" "${bg_img}"; then
         cp -f "${running_bg_img_path}" "${fav_dir}"
         echo "Add ${running_bg_img_path} to ${fav_dir}" 
         exit
@@ -53,9 +53,9 @@ existImg() {
     local fav_dir=$1
     local file_name=$2
     if [[ -e ${fav_dir}/${file_name} ]]; then
-        return 1
-    else
         return 0
+    else
+        return 1
     fi
 }
 

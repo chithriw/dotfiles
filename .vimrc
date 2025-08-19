@@ -79,9 +79,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 call plug#end()
 
-"### Start -> open new windows for markdown preview ###
-function OpenMarkdownPreview (url)
-execute "silent ! firefox-esr --new-window " . a:url
-endfunction
-"### End ###
-let g:mkdp_browserfunc = 'OpenMarkdownPreview'
+"function OpenMarkdownPreview (url)
+"  execute "silent ! firefox-esr --new-window " . a:url
+"endfunction
+"let g:mkdp_browserfunc = 'OpenMarkdownPreview'

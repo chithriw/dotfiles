@@ -18,9 +18,10 @@
 
   [PulseAudio](https://wiki.archlinux.org/title/PulseAudio)
 
+
 * Bluetooth
 
-  [BlueBerry](https://github.com/linuxmint/blueberry)
+  [Bluetooth](https://wiki.archlinux.org/title/Bluetooth)
 
 * Network manager
 
@@ -32,18 +33,24 @@
 
   IME -> [Rime](https://wiki.archlinux.org/title/Rime)
 
-* File manager
+* Font
 
-  [Thunar](https://wiki.archlinux.org/title/Thunar)
+  1. extra/ttf-fira-code
+  2. aur/adobe-base-14-fonts
+  3. extra/wqy-microhei
+  4. extra/otf-font-awesome
 
-* Terminal
+* Using Software
 
-  [st](https://wiki.archlinux.org/title/St)
-
-* Screen capture
-
-  [flameshot](https://wiki.archlinux.org/title/Flameshot)
+  * [Thunar](https://wiki.archlinux.org/title/Thunar) 
+  * [st](https://wiki.archlinux.org/title/St) 
+  * [flameshot](https://wiki.archlinux.org/title/Flameshot) 
+  * [BlueBerry](https://github.com/linuxmint/blueberry)
+  * [i3lockmore](https://github.com/SammysHP/i3lockmore)
+  * [feh](https://wiki.archlinux.org/title/Feh)
+  * [picom](https://wiki.archlinux.org/title/Picom)
 
 ## TODO
+
 
 1. Install script
