@@ -199,7 +199,8 @@ bar {
 
 
 # colour of border, background, text, indicator, and child_border
-client.focused              #bf616a #2f343f #d8dee8 #bf616a #16a085
+client.focused              #bf616a #2f343f #d8dee8 #bf616a #00ffff
+#client.focused              #bf616a #2f343f #d8dee8 #bf616a #16a085
 client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
@@ -240,8 +241,8 @@ exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 ### Custom Hotkey ###
 bindsym $mod+e exec thunar
 bindsym $mod+Shift+a exec pavucontrol
-bindsym $mod+Control+u exec light -A 10
-bindsym $mod+Control+d exec light -U 10
+bindsym $mod+Control+u exec light -A 5
+bindsym $mod+Control+d exec light -U 5
 # puluseaudio only
 bindsym $mod+Control+n exec pactl set-sink-volume $(pactl get-default-sink) +10.0%
 bindsym $mod+Control+p exec pactl set-sink-volume $(pactl get-default-sink) -10.0%

@@ -3,12 +3,10 @@
 acg_dir="$HOME/Pictures/Acg"
 anm_dir="$HOME/Pictures/Anime"
 fav_dir="$HOME/Pictures/Fav-Wallpaper"
-sex_dir="$HOME/Pictures/Sex"
 snry_dir="$HOME/Pictures/Scenery"
 
 dir_arr=(
     "$acg_dir"
-    "$sex_dir"
     "$fav_dir"
     "$anm_dir"
     "$snry_dir"
@@ -26,7 +24,6 @@ fav_img=$(find "${fav_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.j
 acg_img=$(find "${acg_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
 anm_img=$(find "${anm_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
 snry_img=$(find "${snry_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
-sex_img=$(find "${sex_dir}" -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf --head-count=1)
 
 function main() {
     if [[ $# -eq 0 ]]; then
@@ -45,9 +42,6 @@ function main() {
             ;;
         "snry")
             feh --bg-max "${snry_img}"
-            ;;
-        "sex")
-            feh --bg-max "${sex_img}"
             ;;
         *)
             echo "Invalid input argument"
