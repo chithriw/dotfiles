@@ -15,7 +15,7 @@ general {
 order += "cpu_temperature 0"
 order += "volume master"
 order += "wireless wlp4s0"
-order += "ethernet enp6s0f4u2"
+order += "ethernet enp0s20f0u3"
 order += "battery all"
 order += "disk /"
 order += "cpu_usage"
@@ -41,7 +41,7 @@ wireless wlp4s0 {
         format_down = "🛜 down |"
 }
 
-ethernet enp6s0f4u2{
+ethernet enp0s20f0u3 {
         #format_up = "E: %ip (%speed) | "
         #format_down = "E: down | "
         format_up = "🖧 %ip |"

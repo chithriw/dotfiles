@@ -52,6 +52,7 @@ set shiftwidth=4
 set expandtab
 set hidden
 set smartindent
+set nohls
 set incsearch
 set smartindent
 set autoindent

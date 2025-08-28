@@ -2,7 +2,7 @@
 
 ## Install
 
-## Using software
+## System software
 
 * [Display manager](https://wiki.archlinux.org/title/Display_manager)
 
@@ -29,7 +29,7 @@
 
 * [Input method](https://wiki.archlinux.org/title/Input_method)
 
-  IMF -> [Fcitx](https://wiki.archlinux.org/title/Fcitx)
+  IMF -> [Fcitx5](https://wiki.archlinux.org/title/Fcitx5)
 
   IME -> [Rime](https://wiki.archlinux.org/title/Rime)
 
@@ -44,11 +44,12 @@
 
   * [Thunar](https://wiki.archlinux.org/title/Thunar) 
   * [st](https://wiki.archlinux.org/title/St) 
-  * [BlueBerry](https://github.com/linuxmint/blueberry)
+  * [Blueman](https://wiki.archlinux.org/title/Blueman)
   * [i3lock-color](https://github.com/SammysHP/i3lockmore)
   * [feh](https://wiki.archlinux.org/title/Feh)
   * [picom](https://wiki.archlinux.org/title/Picom)
   * [Snipaste](https://www.snipaste.com/)
+  * [light](https://gitlab.com/dpeukert/light)
 
 ## TODO
 
