@@ -61,15 +61,11 @@ set mouse=a
 
 syntax enable
 
-" Shortcut
-nmap <C-p> <Plug>MarkdownPreview
-nmap <M-s> <Plug>MarkdownPreviewStop
 
 runtime ftplugin/man.vim
 
 filetype plugin indent on
 
-autocmd BufEnter * set updatetime=4000
 autocmd BufEnter *.md set updatetime=100
 
 
@@ -79,7 +75,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 call plug#end()
 
-"function OpenMarkdownPreview (url)
-"  execute "silent ! firefox-esr --new-window " . a:url
-"endfunction
-"let g:mkdp_browserfunc = 'OpenMarkdownPreview'
+" Shortcut
+nmap <C-p> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop

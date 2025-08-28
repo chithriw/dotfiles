@@ -1,0 +1,8 @@
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias gl='git log --all --graph --oneline --decorate'
+alias gs='git status'
+alias xc='xclip -selection clipboard'
+alias yt-dlpc='yt-dlp -o "%(title)s.%(ext)s"'
+alias xc='xclip -selection clipboard'
+alias pomotroid='$HOME/Applications/pomotroid-0.13.0-linux.AppImage --no-sandbox --in-process-gpu'

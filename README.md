@@ -36,19 +36,19 @@
 * Font
 
   1. extra/ttf-fira-code
-  2. aur/adobe-base-14-fonts
-  3. extra/wqy-microhei
-  4. extra/otf-font-awesome
+  2. extra/wqy-microhei
+  3. extra/noto-fonts
+  4. extra/noto-fonts-emoji
 
 * Using Software
 
   * [Thunar](https://wiki.archlinux.org/title/Thunar) 
   * [st](https://wiki.archlinux.org/title/St) 
-  * [flameshot](https://wiki.archlinux.org/title/Flameshot) 
   * [BlueBerry](https://github.com/linuxmint/blueberry)
-  * [i3lockmore](https://github.com/SammysHP/i3lockmore)
+  * [i3lock-color](https://github.com/SammysHP/i3lockmore)
   * [feh](https://wiki.archlinux.org/title/Feh)
   * [picom](https://wiki.archlinux.org/title/Picom)
+  * [Snipaste](https://www.snipaste.com/)
 
 ## TODO
 

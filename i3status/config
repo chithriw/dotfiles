@@ -5,6 +5,8 @@
 # The following line should contain a sharp s:
 # ß
 # If the above line is not correctly displayed, fix your editor first!
+# Intall nessary emoji package to show it right away
+# Archlinux : `noto-fonts`, `noto-fonts-emoji`
 
 general {
         colors = true
@@ -35,15 +37,15 @@ volume master {
 
 wireless wlp4s0 {
         #format_up = "W: (%quality at %essid, %bitrate) %ip | "
-        format_up = "📶 %essid |"
-        format_down = "📶❌ down"
+        format_up = "🛜 %essid |"
+        format_down = "🛜 down |"
 }
 
 ethernet enp6s0f4u2{
         #format_up = "E: %ip (%speed) | "
         #format_down = "E: down | "
-        format_up = "🌐🔌 %ip |"
-        format_down = "🌐🔌❌ down |"
+        format_up = "🖧 %ip |"
+        format_down = "🖧 down |"
 }
 
 battery all {
