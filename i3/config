@@ -46,7 +46,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec --no-startup-id st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -54,7 +54,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run_history
 # A more modern dmenu replacement is rofi:
-#bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+#bindcode $mod+40 exec --no-startup-id "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -145,7 +145,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -221,12 +221,12 @@ bar {
 
 ### Custom window rule ###
 # Disable top title of i3-wm
-#for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 1
 
 # Default floating window
 for_window [class="Clash-verge"] floating enable, resize set 1300 700, move position center
 for_window [class="Blueberry.py"] floating enable, resize set 800 600, move position center
-for_window [class="Blueman-manager"] floating enable, resize set 800 600, move position center
+#for_window [class="Blueman-manager"] floating enable, resize set 800 600, move position center
 for_window [class="pavucontrol"] floating enable, resize set 800 600, move position center
 
 # Default scratchpad window
@@ -235,6 +235,7 @@ for_window [class="Workrave"], move scratchpad, scratchpad show , move position 
 
 # Default workspace
 for_window [class="TelegramDesktop"] move to workspace $ws6, workspace $ws6
+for_window [class="QQ"] move to workspace $ws6, workspace $ws6
 
 # Gap between window
 gaps inner 1
@@ -243,24 +244,25 @@ gaps inner 1
 exec --no-startup-id "fcitx5"
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueberry-tray"
-exec --no-startup-id "blueman-applet"
+#exec --no-startup-id "blueman-applet"
 exec --no-startup-id "thunar --daemon"
-exec --no-startup-id "~/dotfiles/bin/set-bg-img.sh snry"
+exec --no-startup-id "dunst"
 ### END: Autostart application ###
 
 ### START: Envirment I3 Begin, Always Run Config ###
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id "~/dotfiles/bin/set-bg-img.sh snry"
 ### END: Envirment I3 Begin, Always Run Config ###
 
 ### START: Custom Command Keybinds ###
-bindsym $mod+e exec "thunar"
-bindsym $mod+Shift+a exec "pavucontrol"
-bindsym $mod+Control+u exec "light -A 5"
-bindsym $mod+Control+d exec "light -U 5"
-bindsym $mod+Control+n exec "pactl set-sink-volume $(pactl get-default-sink) +10.0%"
-bindsym $mod+Control+p exec "pactl set-sink-volume $(pactl get-default-sink) -10.0%"
-bindsym $mod+Shift+b exec "blueman-manager"
-bindsym $mod+Control+l exec "i3lock -B 12"
+bindsym $mod+e exec --no-startup-id "thunar"
+bindsym $mod+Shift+a exec --no-startup-id "pavucontrol"
+bindsym $mod+Control+u exec --no-startup-id "light -A 5"
+bindsym $mod+Control+d exec --no-startup-id "light -U 5"
+bindsym $mod+Control+n exec --no-startup-id "pactl set-sink-volume $(pactl get-default-sink) +10.0%"
+bindsym $mod+Control+p exec --no-startup-id "pactl set-sink-volume $(pactl get-default-sink) -10.0%"
+bindsym $mod+Shift+b exec --no-startup-id "blueberry"
+bindsym $mod+Control+l exec --no-startup-id "i3lock -B 12"
 ### END: Custom Command Keybinds ###
 
 ### START: Custom Workspace/Window Keybinds ###

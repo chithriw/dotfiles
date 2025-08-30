@@ -51,7 +51,7 @@ function main() {
 
 function start_picom() {
     if ! pgrep -x "picom" > /dev/null; then
-        picom --daemon
+        picom --backend xrender --daemon
     fi
 }
 

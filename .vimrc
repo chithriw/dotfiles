@@ -62,7 +62,6 @@ set mouse=a
 
 syntax enable
 
-
 runtime ftplugin/man.vim
 
 filetype plugin indent on
